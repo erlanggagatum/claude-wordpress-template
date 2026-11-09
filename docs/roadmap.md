@@ -21,7 +21,7 @@ Update it when you finish or start something significant. No personal info here 
 1. [x] First real run: setup, serve, `check:http`.
 2. [x] Editor confirmed working (meta box, Event List block, template dropdown, Site Editor).
 3. [x] Git repo, LF line endings (`.gitattributes`), privacy pre-commit hook (`.githooks/`, enabled by `bin/setup.php`).
-4. [ ] `composer install && composer lint`, then fix WPCS findings.
+4. [x] WPCS clean: theme and scaffolder output (`php bin/check.php --phpcs`).
 
 ## Later / ideas
 

@@ -267,7 +267,8 @@ PHP,
 			fail( 'meta needs at least one field: key:type[:Label]' );
 		}
 		$valid = array( 'text', 'textarea', 'url', 'email', 'date', 'time', 'select', 'number', 'integer', 'checkbox' );
-		$lines = array();
+		$lines   = array();
+		$key_pad = max( array_map( static fn( $s ) => strlen( explode( ':', $s, 2 )[0] ), $specs ) ) + 2;
 		foreach ( $specs as $spec ) {
 			$parts = explode( ':', $spec, 3 );
 			$key   = $parts[0];
@@ -279,9 +280,11 @@ PHP,
 			if ( ! in_array( $type, $valid, true ) ) {
 				fail( "Unknown type '{$type}'. Valid: " . implode( ' ', $valid ) );
 			}
-			$field  = "\t\t" . q( $key ) . " => array(\n";
-			$field .= "\t\t\t'label' => __( " . q( $label ) . ", 'agent-theme' ),\n";
-			$field .= "\t\t\t'type'  => " . q( $type ) . ",\n";
+			// Align "=>" to the longest key (WPCS): 'options' only exists for selects.
+			$pad    = 'select' === $type ? 7 : 5;
+			$field  = "\t\t" . str_pad( q( $key ), $key_pad ) . " => array(\n";
+			$field .= "\t\t\t" . str_pad( "'label'", $pad + 2 ) . ' => __( ' . q( $label ) . ", 'agent-theme' ),\n";
+			$field .= "\t\t\t" . str_pad( "'type'", $pad + 2 ) . ' => ' . q( $type ) . ",\n";
 			if ( 'select' === $type ) {
 				$field .= "\t\t\t'options' => array(\n\t\t\t\t'option-a' => __( 'Option A', 'agent-theme' ),\n\t\t\t\t'option-b' => __( 'Option B', 'agent-theme' ),\n\t\t\t),\n";
 			}

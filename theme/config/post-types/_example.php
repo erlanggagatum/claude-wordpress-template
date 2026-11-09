@@ -14,13 +14,15 @@ return array(
 	'singular' => __( 'Book', 'agent-theme' ),
 	'plural'   => __( 'Books', 'agent-theme' ),
 	'args'     => array(               // Optional. Any register_post_type() arg.
-		'menu_icon'    => 'dashicons-book', // https://developer.wordpress.org/resource/dashicons/
+		'menu_icon'    => 'dashicons-book', // Icons: https://developer.wordpress.org/resource/dashicons/ .
 		'rewrite'      => array( 'slug' => 'books' ),
 		'has_archive'  => 'books',     // false to disable /books/ archive.
 		'hierarchical' => false,       // true = page-like (parent/child).
 		'supports'     => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'revisions' ),
+		// phpcs:disable Squiz.PHP.CommentedOutCode.Found -- Intentional: optional args to uncomment.
 		// 'public'       => false,    // Internal-only data type.
 		// 'show_in_rest' => true,     // Keep true: block editor + REST need it.
 		// 'template'     => array( array( 'core/paragraph' ) ), // Default blocks for new posts.
+		// phpcs:enable
 	),
 );

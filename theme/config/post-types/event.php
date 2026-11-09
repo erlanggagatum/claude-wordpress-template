@@ -19,9 +19,9 @@ return array(
 	'singular' => __( 'Event', 'agent-theme' ),
 	'plural'   => __( 'Events', 'agent-theme' ),
 	'args'     => array(
-		'menu_icon'    => 'dashicons-calendar-alt',
-		'rewrite'      => array( 'slug' => 'events' ),
-		'has_archive'  => 'events',
+		'menu_icon'     => 'dashicons-calendar-alt',
+		'rewrite'       => array( 'slug' => 'events' ),
+		'has_archive'   => 'events',
 		'menu_position' => 20,
 	),
 );

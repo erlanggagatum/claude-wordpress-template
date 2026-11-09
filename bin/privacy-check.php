@@ -18,7 +18,8 @@ require_once __DIR__ . '/lib.php';
  * Directories and files never scanned (git-ignored / generated / local-only).
  */
 const PRIVACY_SKIP_DIRS  = array( '.git', '.wp', 'tools', 'vendor', 'node_modules' );
-const PRIVACY_SKIP_FILES = array( '.env' );
+// Lock files are generated and list third-party package authors' emails.
+const PRIVACY_SKIP_FILES = array( '.env', 'composer.lock', 'package-lock.json' );
 
 /**
  * Email domains that are safe to commit (RFC 2606 reserved + no-reply style).
