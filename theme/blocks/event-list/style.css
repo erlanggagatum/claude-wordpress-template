@@ -1,0 +1,26 @@
+.agent-event-list__items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: var(--wp--preset--spacing--10);
+}
+
+.agent-event-list__item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: var(--wp--preset--spacing--10);
+	padding-block: var(--wp--preset--spacing--10);
+	border-bottom: 1px solid var(--wp--preset--color--border);
+}
+
+.agent-event-list__title {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.agent-event-list__meta {
+	color: var(--wp--preset--color--contrast-2);
+	font-size: var(--wp--preset--font-size--small);
+}

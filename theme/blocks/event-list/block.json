@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "agent-theme/event-list",
+	"version": "0.1.0",
+	"title": "Event List",
+	"category": "agent-theme",
+	"icon": "calendar-alt",
+	"description": "Lists events ordered by event date. Server-rendered.",
+	"keywords": [ "events", "calendar", "upcoming" ],
+	"textdomain": "agent-theme",
+	"attributes": {
+		"count": {
+			"type": "number",
+			"default": 3
+		},
+		"upcomingOnly": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"color": { "background": true, "text": true }
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,26 @@
+<?php
+/**
+ * Annotated template for a new post type. Files starting with "_" are ignored.
+ *
+ * Prefer: php bin/make.php post-type <slug> "<Singular>" "<Plural>"
+ *
+ * @package AgentTheme
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+return array(
+	'slug'     => 'book',              // Required. <=20 chars, lowercase, [a-z0-9_-].
+	'singular' => __( 'Book', 'agent-theme' ),
+	'plural'   => __( 'Books', 'agent-theme' ),
+	'args'     => array(               // Optional. Any register_post_type() arg.
+		'menu_icon'    => 'dashicons-book', // https://developer.wordpress.org/resource/dashicons/
+		'rewrite'      => array( 'slug' => 'books' ),
+		'has_archive'  => 'books',     // false to disable /books/ archive.
+		'hierarchical' => false,       // true = page-like (parent/child).
+		'supports'     => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'revisions' ),
+		// 'public'       => false,    // Internal-only data type.
+		// 'show_in_rest' => true,     // Keep true: block editor + REST need it.
+		// 'template'     => array( array( 'core/paragraph' ) ), // Default blocks for new posts.
+	),
+);
