@@ -12,9 +12,6 @@ plus tooling that lets an agent scaffold, run and verify changes without a GUI.
 - `theme/` is linked into `.wp/wp-content/themes/agent-theme`. **Edit files in `theme/`, never in `.wp/`.**
 - Custom fields are **native** (`register_post_meta`). No ACF / Meta Box. No build step (plain CSS/JS).
 
-**Start of every session:** read `docs/roadmap.md` (status + next tasks). Update it when you
-finish or start something significant.
-
 ## Golden rules
 
 1. **Scaffold, don't hand-roll.** Use `php bin/make.php <command>` for new post types, taxonomies,
@@ -88,7 +85,6 @@ bin/
 ├── runtime-check.php  registration checks (runs inside WP)
 └── lib.php            shared helpers for bin scripts
 docs/
-├── roadmap.md               status + next tasks (read first)
 ├── architecture.md          how hybrid template resolution works
 └── recipes/*.md             step-by-step for every common task
 ```
