@@ -20,7 +20,7 @@ Update it when you finish or start something significant. No personal info here 
 
 1. [x] First real run: setup, serve, `check:http`.
 2. [x] Editor confirmed working (meta box, Event List block, template dropdown, Site Editor).
-3. [ ] `git init` plus a pre-commit hook (`.githooks/pre-commit` running `php bin/privacy-check.php`, enabled with `git config core.hooksPath .githooks`).
+3. [x] Git repo, LF line endings (`.gitattributes`), privacy pre-commit hook (`.githooks/`, enabled by `bin/setup.php`).
 4. [ ] `composer install && composer lint`, then fix WPCS findings.
 
 ## Later / ideas
